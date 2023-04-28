@@ -1,42 +1,94 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System files
+# Java and Maven related
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.zip
+*.tar.gz
+*.nar
+*.bz2
+*.7z
+*.rar
+*.swp
+*.bak
+*.tmp
+*.swp
+*.bak
+*.tmp
+*.save
+*.autosave
+*.old
+*.fuse_hidden*
 .DS_Store
-Thumbs.db
+.classpath
+.project
+.settings/
+bin/
+dependency-reduced-pom.xml
+.releaseBackup
+maven-eclipse.xml
+release.properties
+.springBeans
+spring-boot-starter-parent*.iml
+
+# IntelliJ IDEA related
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse related
+*.pydevproject
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# Angular related
+/node_modules/
+/dist/
+/.npm
+.npmrc
+/.yarn-cache
+yarn.lock
+.cache
+.cache-loader
+/.angular/cache
+/angular-errors.log
+
+# Visual Studio Code related
+.vscode/
+*.code-workspace
+
+# macOS related
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
