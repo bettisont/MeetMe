@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Enter Postcodes</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <!-- Display the form only if results are not present -->
+      <ng-container *ngIf="!results">
+        <form (ngSubmit)="onSubmit()" #postcodeForm="ngForm">
+
+          <!-- Form elements go here -->
+          <div
+            class="form-group"
+            *ngFor="let postcode of postcodes; let i = index"
+            [@listAnimation]="{ value: i, params: { isAdded: postcode.isAdded }}"
+          >
+            <label for="postcode{{ i }}" class="form-label">Postcode {{ i + 1 }}:</label>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              id="postcode{{ i }}"
+              name="postcode{{ i }}"
+              [(ngModel)]="postcode.value"
+              required
+            />
+          </div>
+          <div class="d-flex justify-content-center button-div">
+            <button type="button" class="btn btn-secondary mb-4 add-postcode-btn" (click)="addPostcode()">Add another postcode</button>
+          </div>
+
+
+          <div class="form-group">
+            <label for="activityType" class="form-label">Activity Type:</label>
+            <select class="form-control form-control-lg" id="activityType" name="activityType" [(ngModel)]="activityType" required>
+              <option value="" disabled>Select an activity</option>
+              <option value="pub">Pub</option>
+              <option value="cafe">Cafe</option>
+              <option value="park">Park</option>
+              <option value="market">Market</option>
+              <option value="library">Library</option>
+              <option value="climbing">Climbing Centre</option>
+              <!-- Add more activity types here -->
+            </select>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-lg btn-primary mt-4" [disabled]="!postcodeForm.form.valid">Find Activities</button>
+          </div>
+        </form>
+      </ng-container>
+
+      <!-- Display the results table only if results are present -->
+      <ng-container *ngIf="results">
+        <table class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Postcode</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of results">
+            <td>{{ item.name }}</td>
+            <td>{{ item.location.address }}</td>
+            <td>{{ item.location.postcode }}</td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-lg btn-secondary mt-4" (click)="startNewSearch()">Back</button>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
+
