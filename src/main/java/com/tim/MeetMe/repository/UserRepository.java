@@ -1,6 +1,6 @@
-package repository;
+package com.tim.MeetMe.repository;
 
-import entity.User.User;
+import com.tim.MeetMe.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {

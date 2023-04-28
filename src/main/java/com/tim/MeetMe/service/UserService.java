@@ -1,9 +1,10 @@
-package service;
+package com.tim.MeetMe.service;
 
-import entity.User.User;
+import com.tim.MeetMe.User.User;
 
 public interface UserService {
     User getUser(Integer userId);
     User createUser(User user);
     User updateUser(Integer userId, User user);
+    void deleteUser(Integer userId);
 }

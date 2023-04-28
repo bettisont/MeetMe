@@ -1,14 +1,15 @@
-package service;
+package com.tim.MeetMe.service;
 
-import entity.User.User;
+import com.tim.MeetMe.repository.UserRepository;
+import com.tim.MeetMe.User.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository repository;
-
 
     @Override
     public User getUser(Integer userId) {
@@ -26,4 +27,11 @@ public class UserServiceImpl implements UserService {
         userToUpdate.merge(user);
         return repository.save(userToUpdate);
     }
+
+    @Override
+    public void deleteUser(Integer userId) {
+        User toDelete = repository.findById(userId).get();
+        repository.delete(toDelete);
+    }
+
 }

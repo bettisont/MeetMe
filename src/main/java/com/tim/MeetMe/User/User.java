@@ -1,10 +1,11 @@
-package entity.User;
+package com.tim.MeetMe.User;
 
 import jakarta.persistence.*;
 
 import java.util.Set;
 
 @Entity
+@Table(name = "users")
 public class User {
 
 
@@ -16,6 +17,9 @@ public class User {
 
     @Column
     private String surName;
+
+    @Column
+    private String postCode;
 
     @Column
     private Integer age;
@@ -64,6 +68,14 @@ public class User {
 
     public Set<User> getFriends() {
         return friends;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
     }
 
     public void setFriends(Set<User> friends) {
