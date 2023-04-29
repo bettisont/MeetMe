@@ -2,6 +2,7 @@ package com.tim.MeetMe.User;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -89,4 +90,13 @@ public class User {
         this.surName = user.surName;
         this.friends = user.friends;
     }
+
+    public void addFriend(User friend) {
+        if (friends == null) {
+            friends = new HashSet<>();
+        }
+        friends.add(friend);
+        friend.getFriends().add(this);
+    }
+
 }

@@ -34,4 +34,15 @@ public class UserServiceImpl implements UserService {
         repository.delete(toDelete);
     }
 
+    @Override
+    public void addFriend(Integer userId, Integer friendId) {
+        User user = repository.findById(userId).get();
+        User friend = repository.findById(friendId).get();
+
+        user.addFriend(friend);
+        repository.save(user);
+        repository.save(friend);
+    }
+
+
 }

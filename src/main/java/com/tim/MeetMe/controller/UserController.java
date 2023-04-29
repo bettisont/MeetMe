@@ -28,6 +28,11 @@ public class UserController {
         return this.userService.createUser(user);
     }
 
+    @PostMapping("/{userId}/friends/{friendId}")
+    public void addFriend(@PathVariable Integer userId, @PathVariable Integer friendId) {
+        this.userService.addFriend(userId, friendId);
+    }
+
     @PutMapping("/{userId}")
     public User updateUser(@PathVariable Integer userId, @RequestBody User user) {
         return this.userService.updateUser(userId, user);
