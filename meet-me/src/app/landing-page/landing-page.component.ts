@@ -17,4 +17,7 @@ export class LandingPageComponent implements OnInit {
     this.router.navigate(['/get-started']);
   }
 
+  onRegister() {
+    this.router.navigate(['/register']);
+  }
 }
